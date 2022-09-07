@@ -50,7 +50,7 @@
       {:else}
         <label
           for="sim"
-          class="block mt-4 border bg-green-400/75 border-gray-300 rounded-lg py-2 px-6 text-lg"
+          class="block mt-4 border bg-green-400/75 cursor-pointer border-gray-300 rounded-lg py-2 px-6 text-lg"
           >Sim</label
         >
       {/if}
@@ -65,12 +65,12 @@
         <label
           for="não"
           class="block mt-4 border border-gray-300 rounded-lg py-2 px-6 text-lg"
-          >não</label
+          >Não</label
         >
       {:else}
         <label
           for="não"
-          class="block mt-4 bg-red-500/75 border border-gray-300 rounded-lg py-2 px-6 text-lg"
+          class="block mt-4 bg-red-500/75 cursor-pointer border border-gray-300 rounded-lg py-2 px-6 text-lg"
           >Não</label
         >
       {/if}

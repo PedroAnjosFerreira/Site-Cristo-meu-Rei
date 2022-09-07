@@ -1,13 +1,6 @@
 <script>
   import answers from "./stores";
-  import Router from "svelte-spa-router";
-  import { wrap } from "svelte-spa-router/wrap";
-
-  const route = {
-    "/Result/*": wrap({
-      asyncComponent: () => import("../routes/Result.svelte"),
-    }),
-  };
+  import { link } from "svelte-spa-router";
 
   export let cont;
 
@@ -30,7 +23,6 @@
   }
   function get_answers() {
     cont += 1;
-
     $answers = [...$answers, resposta];
   }
 </script>
@@ -51,7 +43,7 @@
       {:else}
         <label
           for="sim"
-          class="block mt-4 border bg-green-400/75 border-gray-300 rounded-lg py-2 px-6 text-lg"
+          class="block mt-4 border bg-green-400/75 cursor-pointer border-gray-300 rounded-lg py-2 px-6 text-lg"
           >Sim</label
         >
       {/if}
@@ -71,7 +63,7 @@
       {:else}
         <label
           for="não"
-          class="block mt-4 bg-red-500/75 border border-gray-300 rounded-lg py-2 px-6 text-lg"
+          class="block mt-4 bg-red-500/75 cursor-pointer border border-gray-300 rounded-lg py-2 px-6 text-lg"
           >Não</label
         >
       {/if}
@@ -87,7 +79,7 @@
       disabled={nextDisabled}
       class="disabled:opacity-30 bg-white hover:bg-gray-100 mt-5 text-gray-800 font-semibold
       py-2 px-4 border border-gray-400 rounded shadow"
-      on:click={get_answers}><a href="#/Result/">Finalizar</a></button
+      on:click={get_answers}><a href="/result" use:link>Finalizar</a></button
     >
   </div>
 </div>

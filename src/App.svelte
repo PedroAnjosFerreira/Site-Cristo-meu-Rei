@@ -1,18 +1,13 @@
 <script>
   import Router from "svelte-spa-router";
-  import Home from "./routes/Home.svelte";
-  import answers from "./lib/stores";
 
-  import { wrap } from "svelte-spa-router/wrap";
+  import Home from "./routes/Home.svelte";
+  import Result from "./routes/Result.svelte";
 
   const routes = {
     "/": Home,
-    "/Result/*": wrap({
-      asyncComponent: () => import("./routes/Result.svelte"),
-    }),
+    "/result": Result,
   };
 </script>
 
-<main>
-  <Router {routes} />
-</main>
+<Router {routes} />
